@@ -9,6 +9,7 @@ others. The tool assumes to run on a server hosting one of these repositories -
 so there has to be at least one you can control. A typical use-case would be 
 your own [gitolite](http://gitolite.com/gitolite/index.html) installation, that 
 you want to keep in sync with [GitHub](https://github.com/).
+Minimum required version of git is 1.8, because of option "--is-ancestor" in git-merge-base.
 
 ## Setup (gitolite)
 
