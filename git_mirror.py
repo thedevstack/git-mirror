@@ -172,7 +172,7 @@ class Repo:
         else:
             # ref does not exist anymore. delete it.
             assert local_sha != git_nullsha, "Why didn't we bail out earlier if there is nothing to do...?"
-            git.update_ref("-d", ref, local_sha) # this checks that the old value is still local_sha
+            #git.update_ref("-d", ref, local_sha) # this checks that the old value is still local_sha
         # Now run the post-receive hooks. This will *also* push the changes to all mirrors, as we
         # are one of these hooks!
         os.putenv("GIT_MIRROR_SOURCE", mirror) # tell ourselves which repo we do *not* have to update

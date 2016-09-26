@@ -25,7 +25,7 @@
 
 # This is the CGI script receiving GitHub webhooks.
 # You may have to change the location of the "main" webhook script:
-webhook_core = "/home/git/git-mirror/webhook-core.py"
+webhook_core = "/home/gitosis/git-mirror/webhook-core.py"
 
 # Do NOT change anything below here
 import urllib.request, urllib.parse, json, os, sys
@@ -41,4 +41,4 @@ githubEvent = os.getenv('HTTP_X_GITHUB_EVENT')
 githubSignature = os.getenv('HTTP_X_HUB_SIGNATURE')
 
 # execute the actual script
-os.execlp("sudo", "sudo", "-n", "-u", "git", webhook_core, repository, str(githubEvent), str(githubSignature))
+os.execlp("sudo", "sudo", "-n", "-u", "gitosis", webhook_core, repository, str(githubEvent), str(githubSignature))
